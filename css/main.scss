@@ -1,0 +1,85 @@
+@use "./sass/_mixins.scss" as *;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #eaf3f5;
+}
+$main_color: rgb(112, 185, 248);
+.repos-container {
+  width: 50%;
+  text-align: center;
+  margin: 40px auto;
+  .head {
+    width: 100%;
+    form {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      width: 100%;
+      input[type="text"] {
+        width: 50%;
+        padding: 10px;
+        font-size: 25px;
+        border: none;
+        @include borderRadius_10;
+        &:focus {
+          outline: 2px solid $main_color;
+        }
+      }
+      input[type="submit"] {
+        @include borderRadius_10;
+        width: fit-content;
+        padding: 10px;
+        font-size: 20px;
+        border: 2px solid $main_color;
+        cursor: pointer;
+        background-color: $main_color;
+        color: #fff;
+        @include transition;
+        &:hover {
+          background-color: #fff;
+          color: $main_color;
+        }
+      }
+    }
+  }
+  .repos {
+    background-color: #fff;
+    padding: 10px;
+    @include borderRadius_10;
+    p {
+      font-size: 20px;
+    }
+    div {
+      padding: 10px;
+      text-align: left;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      p {
+        a {
+          text-decoration: none;
+          display: block;
+          padding: 10px;
+          background-color: $main_color;
+          @include borderRadius_10;
+          color: #fff;
+          font-weight: 400;
+          font-size: 18px;
+          border: 2px solid $main_color;
+          @include transition;
+          &:hover {
+            background-color: #fff;
+            color: $main_color;
+          }
+        }
+      }
+    }
+  }
+}
