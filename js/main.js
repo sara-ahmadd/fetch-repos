@@ -25,12 +25,13 @@ async function getRepositories(userName) {
             reposArea.innerHTML = data
               .map((item, index) => {
                 let repoUrl = item.html_url;
+                let repoStars = item.html_url;
                 return `<div>
-                      <p>${index + 1} - ${item.name}</p>
-                      <p><a href='${repoUrl}' target='_blank'>${
-                  item.html_url
-                }</a></p>
-                      </div>`;
+                          <p>${index + 1} - ${item.name}</p>
+                          <div class='data'>
+                            <p><a href='${repoUrl}' target='_blank'>Go To The Repository</a></p>
+                          </div>
+                        </div>`;
               })
               .join("");
           }
